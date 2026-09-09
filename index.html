@@ -1,0 +1,32 @@
+---
+layout: default
+title:
+description: Notes, photographs, and useful things from Mark Hare.
+---
+<section class="intro" aria-labelledby="intro-heading">
+  <p class="eyebrow">Mark Hare’s personal site</p>
+  <h1 id="intro-heading">Notes on things worth remembering.</h1>
+  <p class="dek">Short articles, photographs, and links collected in one quiet corner of the internet.</p>
+</section>
+
+<section class="latest" aria-labelledby="latest-heading">
+  <div class="section-heading">
+    <h2 id="latest-heading">Latest writing</h2>
+    <a href="{{ '/writing/' | relative_url }}">All writing <span aria-hidden="true">→</span></a>
+  </div>
+
+  <ol class="post-list">
+    {% for post in site.posts limit: 5 %}
+      <li>
+        <article>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+        </article>
+      </li>
+    {% else %}
+      <li class="empty-state">The first note is on its way.</li>
+    {% endfor %}
+  </ol>
+</section>
+

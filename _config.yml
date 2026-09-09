@@ -1,0 +1,31 @@
+title: Mark Hare
+description: Notes, photographs, and useful things from Mark Hare.
+url: https://markhare.org
+baseurl: ""
+permalink: /writing/:title/
+timezone: America/New_York
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
